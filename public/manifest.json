@@ -6,5 +6,43 @@
   "action":{
     "default_title": "Shop Advisor",
     "default_popup": "index.html"
-  }
+  },
+  "permissions": [
+    "tabs",
+    "scripting",
+    "activeTab",
+    "contextMenus",
+    "storage",
+    "nativeMessaging"
+  ],
+  "host_permissions": [
+    "https://developer.chrome.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*",
+        "https://*/*",
+        "http://*/*"
+      ],
+      "css": [
+        "scripts/css/main.9e42e31e.css"
+      ],
+      "js": [
+        "static/js/main.b1b1f5b1.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "scripts/*"
+      ],
+      "matches": [
+        "*://*/*",
+        "http://*/*",
+        "https://*/*"
+      ]
+    }
+  ]
 }
